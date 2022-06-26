@@ -35,7 +35,7 @@ export const Feature = () => {
           <div className="flex flex-col text-center justify-between p-5  shadow-3xl rounded-3xl bg-cardColor">
           <div>
               <div className="imgContainer w-[100%] flex justify-center items-center">
-                <img src={Calendar} alt="" className="max-h-48 align-middle m-0 p-0"/>
+                <img src={Hand} alt="" className="max-h-48 align-middle m-0 p-0"/>
               </div>
               <h6 className="mb-2 font-semibold leading-5">Cleaner Modern Design</h6>
               <p className="mb-3 text-sm text-gray-900">
@@ -46,7 +46,7 @@ export const Feature = () => {
           <div className="flex flex-col text-center justify-between p-5 shadow-3xl rounded-3xl bg-cardColor">
             <div>
                 <div className="imgContainer w-[100%] flex justify-center items-center">
-                    <img src={Hand} alt="" className="max-h-48 align-middle m-0 p-0"/>
+                    <img src={Calendar} alt="" className="max-h-48 align-middle m-0 p-0"/>
                 </div>
                 <h6 className="mb-2 font-semibold leading-5">New Graphing service</h6>
                 <p className="mb-3 text-sm text-gray-900">

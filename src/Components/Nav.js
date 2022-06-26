@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../index.css";
 import logo from "../Media/Dumbell.png";
+import { Link } from "react-router-dom";
 export const Nav = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
@@ -22,44 +23,44 @@ export const Nav = () => {
                     </a>
                     <ul className="flex items-center space-x-8 lg:flex">
                         <li>
-                            <a
-                                href="/"
+                            <Link
+                                to="/"
                                 aria-label="Our Service"
                                 title="Our service"
                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                             >
                                 About
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a
-                                href="/"
+                            <Link
+                                to="/track"
                                 aria-label="Track your workouts"
                                 title="Track your workouts"
                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                             >
                                 Track
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a
-                                href="/"
+                            <Link
+                                to="/track"
                                 aria-label="View your past workouts"
                                 title="View your past workouts"
                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                             >
                                 Workouts
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a
-                                href="/"
+                            <Link
+                                to="/visualize"
                                 aria-label="Visualize your progress"
                                 title="Visualize your progress"
                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                             >
                                 Visualize
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
