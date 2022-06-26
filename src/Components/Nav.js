@@ -21,7 +21,7 @@ export const Nav = () => {
                             TRACKO
                         </span>
                     </a>
-                    <ul className="flex items-center space-x-8 lg:flex">
+                    <ul className="flex items-center hidden space-x-8 lg:flex">
                         <li>
                             <Link
                                 to="/"
@@ -122,7 +122,7 @@ export const Nav = () => {
                                             <img
                                                 src={logo}
                                                 alt=""
-                                                classNameName="inline-flex w-4"
+                                                className="inline-flex w-4"
                                             />
                                             <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                                                 goTrack

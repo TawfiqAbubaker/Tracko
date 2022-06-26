@@ -10,13 +10,8 @@ function App() {
             <Switch>
                 <Route to="/" exact>
                     <HomePage />
-                    {/* <Track/> */}
                 </Route>
-                <Route to="/test">
-                  <HomePage/>
-                  </Route>
                 <Route to="/track">
-                    <HomePage />
                     <Track />
                 </Route>
             </Switch>
