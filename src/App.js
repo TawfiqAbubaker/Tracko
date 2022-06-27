@@ -1,21 +1,17 @@
 import { Nav } from "./Components/Nav";
 import { HomePage } from "./Pages/HomePage";
-import {Route, Switch } from "react-router-dom";
 import "./index.css";
 import { Track } from "./Pages/Track";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
     return (
-        <div>
+        <Router>
             <Nav />
-            <Switch>
-                <Route to="/" exact>
-                    <HomePage />
-                </Route>
-                <Route to="/track">
-                    <Track />
-                </Route>
-            </Switch>
-        </div>
+            <Routes>
+                <Route path="/" element={<HomePage/>} />
+                <Route path="/track" element={<Track />} />
+            </Routes>
+        </Router>
     );
 }
 

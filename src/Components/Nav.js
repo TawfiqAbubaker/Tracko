@@ -125,7 +125,7 @@ export const Nav = () => {
                                                 className="inline-flex w-4"
                                             />
                                             <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                                                goTrack
+                                                Tracko
                                             </span>
                                         </a>
                                     </div>
