@@ -3,6 +3,7 @@ import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 import { Exercise } from "../Components/Exercise";
+import { Footer } from "../Components/Footer";
 import { Dum } from "../tempData/DumData";
 export const Track = () => {
     const [startDate, setStartDate] = useState(new Date());
@@ -71,6 +72,7 @@ export const Track = () => {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 };

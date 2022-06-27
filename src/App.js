@@ -8,8 +8,8 @@ function App() {
         <Router>
             <Nav />
             <Routes>
-                <Route path="/" element={<HomePage/>} />
-                <Route path="/track" element={<Track />} />
+                <Route path="/Tracko/" element={<HomePage/>} />
+                <Route path="/Tracko/track" element={<Track />} />
             </Routes>
         </Router>
     );

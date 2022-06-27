@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 export const Nav = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
-        // <div className="sticky top-0 z-50 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 backdrop-filter backdrop-blur-lg">
-        <div className="sticky top-0 z-50 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+        <div className="sticky top-0 z-50 px-10 py-5 mx-auto sm:max-w-xl md:max-w-full  md:px-24 lg:px-8 backdrop-filter backdrop-blur-lg">
+        {/* <div className="sticky top-0 z-50 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"> */}
 
-            <div className="relative flex items-center justify-between">
+            <div className="lg:px-12 relative flex items-center justify-between">
                 <div className="flex items-center">
                     <a
                         href="/"
@@ -24,7 +24,7 @@ export const Nav = () => {
                     <ul className="flex items-center hidden space-x-8 lg:flex">
                         <li>
                             <Link
-                                to="/"
+                                to="/Tracko/"
                                 aria-label="Our Service"
                                 title="Our service"
                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -34,7 +34,7 @@ export const Nav = () => {
                         </li>
                         <li>
                             <Link
-                                to="/track"
+                                to="/Tracko/track"
                                 aria-label="Track your workouts"
                                 title="Track your workouts"
                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -44,7 +44,7 @@ export const Nav = () => {
                         </li>
                         <li>
                             <Link
-                                to="/track"
+                                to="/Tracko/track"
                                 aria-label="View your past workouts"
                                 title="View your past workouts"
                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -54,7 +54,7 @@ export const Nav = () => {
                         </li>
                         <li>
                             <Link
-                                to="/visualize"
+                                to="/Tracko/visualize"
                                 aria-label="Visualize your progress"
                                 title="Visualize your progress"
                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -161,14 +161,14 @@ export const Nav = () => {
                                             </a>
                                         </li>
                                         <li>
-                                            <a
-                                                href="/"
+                                            <Link
+                                                to="/Tracko/track"
                                                 aria-label="Track your progress"
                                                 title="Track your progress"
                                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                             >
                                                 Track
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li>
                                             <a
