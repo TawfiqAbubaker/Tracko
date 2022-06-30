@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import workingOut from "../Media/homePage.svg";
 
 export const About = () => {
@@ -27,19 +28,19 @@ export const About = () => {
                     </p>
                 </div>
                 <div className="flex flex-col items-center md:flex-row">
-                    <a
-                        href="/"
+                    <Link
+                        to="/Tracko/track"
                         className="inline-flex items-center justify-center w-full h-12 px-6 mb-3 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto md:mr-4 md:mb-0 bg-salmonOrange hover:bg-lightBlue focus:shadow-outline focus:outline-none"
                     >
                         <span className="mr-3">Get Started</span>
-                    </a>
-                    <a
-                        href="/"
+                    </Link>
+                    <Link
+                        to="/Tracko/track"
                         aria-label=""
                         className="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700"
                     >
                         Sign up while it's free!
-                    </a>
+                    </Link>
                 </div>
             </div>
             <div className="relative lg:w-1/2">
