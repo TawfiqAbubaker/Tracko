@@ -31,8 +31,9 @@ export const Track = () => {
             <h2 className="max-w-lg mb-6 font-sans text-4xl text-center leading-none tracking-tight text-gray-900 sm:text-5xl md:mx-auto">
                 Track your workouts.
             </h2>
+
             <div className="container mx-auto px-16 max-w-4xl  min-h-[50vh] mb-24">
-                <div className="flex flex-row justify-around mb-20 mt-10 ">
+                <div className="flex flex-row justify-around mb-16 mt-10 ">
                     <div>
                         <label className="text-xl mb-10">Workout Date</label>
                         <DatePicker
@@ -58,6 +59,7 @@ export const Track = () => {
                     </div>
                 </div>
                 <div className="flex flex-col lg:ml-20">
+                    <hr className="mt-4 w-[90%] border-black" />
                     <div className="flex flex-row">
                         <div className="basis-1/3 text-2xl bold">Exercise</div>
                         <div className="basis-1/3 text-2xl bold">Weight</div>
@@ -65,6 +67,8 @@ export const Track = () => {
                             Repetitions
                         </div>
                     </div>
+                    <hr className="mt-4 w-[90%] border-black" />
+
                     <div className="mt-4">
                         {workoutData.map((exercise, index) => (
                             <Exercise
@@ -81,8 +85,11 @@ export const Track = () => {
                         >
                             Add Exercise
                         </button>
-                        <button className="bg-lightBlue w-28 h-8 mt-3 ml-4 rounded-lg"
-                                onClick={()=> {alert('This feature will be implemented soon.')}}
+                        <button
+                            className="bg-lightBlue w-28 h-8 mt-3 ml-4 rounded-lg"
+                            onClick={() => {
+                                alert("This feature will be implemented soon.");
+                            }}
                         >
                             Save Workout
                         </button>
