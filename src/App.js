@@ -5,15 +5,19 @@ import { Track } from "./Pages/Track";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Visualize } from "./Pages/Visualize";
 import { Feedback } from "./Pages/Feedback";
+import { useState } from "react";
+import { dumData } from "./tempData/DumData";
 function App() {
+    const [language,setLanguage] = useState("En");
+    const [workoutsData, setWorkoutsData] = useState(dumData);
     return (
         <Router>
-            <Nav />
+            <Nav language={language} setLanguage={setLanguage}/>
             <Routes>
-                <Route path="/Tracko/" element={<HomePage/>} />
-                <Route path="/Tracko/track" element={<Track />} />
-                <Route path="/Tracko/Visualize" element={<Visualize/>}/>
-                <Route path="/Tracko/Feedback" element={<Feedback/>}/>
+                <Route path="/Tracko/" element={<HomePage language={language}/>} />
+                <Route path="/Tracko/track" element={<Track language={language} workoutsData={workoutsData} setWorkoutsData={setWorkoutsData}/>} />
+                <Route path="/Tracko/Visualize" element={<Visualize language={language} workoutsData={workoutsData}/>}/>
+                <Route path="/Tracko/Feedback" element={<Feedback language={language}/>}/>
             </Routes>
         </Router>
     );

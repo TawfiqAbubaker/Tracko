@@ -1,6 +1,7 @@
 import logo from "../Media/Dumbell.png";
 
-export const Footer = () => {
+export const Footer = (props) => {
+    const {language} = props;
     return (
         <div className="px-4 pt-10 pb-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
             <div className="grid gap-10 row-gap-6 pb-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -18,7 +19,9 @@ export const Footer = () => {
                     </a>
                     <div className="mt-4 lg:max-w-sm">
                         <p className="text-sm text-gray-800">
-                        Progressive overload is when you gradually increase the weight, frequency, or number of repetitions in your strength training routine.
+                            {language == "En"
+                                ? "Progressive overload is when you gradually increase the weight, frequency, or number of repetitions in your strength training routine."
+                                : "La surcharge progressive consiste à augmenter progressivement le poids, la fréquence ou le nombre de répétitions"}
                         </p>
                     </div>
                 </div>

@@ -33,26 +33,29 @@ export const options = {
   },
 };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: 'Weight progression',
-      data: [88,84,83,82,79,77,75],
-      borderColor: 'rgb(255, 99, 132)',
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
-    },
-    // {
-    //   label: 'Dataset 2',
-    //   data: [1,2,3,4,5,6,7],
-    //   borderColor: 'rgb(53, 162, 235)',
-    //   backgroundColor: 'rgba(53, 162, 235, 0.5)',
-    // },
-  ],
-};
-
-export function LineChart() {
+export function LineChart(props) {
+  const {workoutsData} = props;
+  const labels = workoutsData.map((workout) => {
+      var options = {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+      };
+      return workout[0].Date.toLocaleDateString("en-US", options);
+  });
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: 'Weight progression',
+        data: workoutsData.map((workout) => {
+          return workout[0].Weight;
+        }),
+        borderColor: 'rgb(255, 99, 132)',
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      },
+    ],
+  };
   return <Line options={options} data={data}/>;
 }

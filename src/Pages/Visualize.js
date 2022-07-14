@@ -1,12 +1,13 @@
 import { LineChart } from "../Components/LineChart";
 import { Footer } from "../Components/Footer";
 
-export const Visualize = () => {
+export const Visualize = (props) => {
+    const {language, workoutsData} = props;
     return (
         <div className="bg-gradient-to-b from-cyan-500 to-blue-500 min-h-[90vh]">
             <div className="w-[80vw] mx-auto pt-16">
                 <h2 className="max-w-lg mb-6  font-sans text-4xl text-center leading-none tracking-tight text-gray-900 sm:text-5xl md:mx-auto">
-                    Visualize your progress.
+                    {language=="En" ? "Visualize your progress" : "Visualisez votre progrès"}
                 </h2>
                 <div className="mb-3">
                     <label htmlFor="graphContent" className="text-xl mr-3">Graph type:</label>
@@ -17,7 +18,7 @@ export const Visualize = () => {
                 </div>
 
                 <div className=" bg-white rounded-lg">
-                    <LineChart />
+                    <LineChart workoutsData={workoutsData}/>
                 </div>
             </div>
             <div className="bg-lightBlue mt-10">

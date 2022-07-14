@@ -2,7 +2,8 @@ import { useState } from "react";
 import "../index.css";
 import logo from "../Media/Dumbell.png";
 import { Link } from "react-router-dom";
-export const Nav = () => {
+export const Nav = (props) => {
+    const {language, setLanguage} = props;
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
         <div className="sticky top-0 z-50 px-10 py-5 mx-auto sm:max-w-xl md:max-w-full  md:px-24 lg:px-8 backdrop-filter backdrop-blur-lg">
@@ -40,7 +41,7 @@ export const Nav = () => {
                                 Track
                             </Link>
                         </li>
-                        
+
                         <li>
                             <Link
                                 to="/Tracko/Visualize"
@@ -65,12 +66,31 @@ export const Nav = () => {
                 </div>
                 <ul className="flex items-center hidden space-x-8 lg:flex">
                     <li>
+                        {language == "En" ? (
+                            <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_the_United_Kingdom.svg"
+                                alt=""
+                                className="w-8"
+                                onClick={() => setLanguage("Fr")}
+                            />
+                        ) : (
+                            <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg"
+                                alt=""
+                                className="w-8 h-4"
+                                onClick={() => setLanguage("En")}
+                            />
+                        )}
+                    </li>
+                    <li>
                         <Link
                             to="/Tracko/"
                             aria-label="Login"
                             title="Login"
                             className="inline-flex items-center justify-center h-10 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-lightBlue hover:bg-sky-300 focus:shadow-outline focus:outline-none"
-                            onClick={()=> {alert('This feature will be implemented soon.')}}
+                            onClick={() => {
+                                alert("This feature will be implemented soon.");
+                            }}
                         >
                             Login
                         </Link>
@@ -81,7 +101,9 @@ export const Nav = () => {
                             className="inline-flex items-center justify-center h-10 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md  bg-darkBlue-100 hover:bg-darkBlue-200 focus:shadow-outline focus:outline-none"
                             aria-label="Sign up"
                             title="Sign up"
-                            onClick={()=> {alert('This feature will be implemented soon.')}}
+                            onClick={() => {
+                                alert("This feature will be implemented soon.");
+                            }}
                         >
                             Sign up
                         </Link>
@@ -171,7 +193,7 @@ export const Nav = () => {
                                                 Track
                                             </Link>
                                         </li>
-                                        
+
                                         <li>
                                             <Link
                                                 to="/Tracko/Visualize"
@@ -211,6 +233,27 @@ export const Nav = () => {
                                             >
                                                 Sign up
                                             </Link>
+                                        </li>
+                                        <li>
+                                            {language == "En" ? (
+                                                <img
+                                                    src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_the_United_Kingdom.svg"
+                                                    alt=""
+                                                    className="w-8"
+                                                    onClick={() =>
+                                                        setLanguage("Fr")
+                                                    }
+                                                />
+                                            ) : (
+                                                <img
+                                                    src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg"
+                                                    alt=""
+                                                    className="w-8 h-4"
+                                                    onClick={() =>
+                                                        setLanguage("En")
+                                                    }
+                                                />
+                                            )}
                                         </li>
                                     </ul>
                                 </nav>
