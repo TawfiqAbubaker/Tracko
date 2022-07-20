@@ -48,7 +48,7 @@ export const Nav = (props) => {
                         </li>
                         <li>
                             <Link
-                                to={currentUser?"}/Tracko/track":"/Tracko/login"}
+                                to={currentUser?"/Tracko/track":"/Tracko/login"}
                                 aria-label="Track your workouts"
                                 title="Track your workouts"
                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -59,7 +59,7 @@ export const Nav = (props) => {
 
                         <li>
                             <Link
-                                to={currentUser?"}/Tracko/Visualize":"/Tracko/login"}
+                                to={currentUser?"/Tracko/Visualize":"/Tracko/login"}
                                 aria-label="Visualize your progress"
                                 title="Visualize your progress"
                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -210,7 +210,7 @@ export const Nav = (props) => {
                                         </li>
                                         <li>
                                             <Link
-                                                to={currentUser?"}/Tracko/track":"/Tracko/login"}
+                                                to={currentUser?"/Tracko/track":"/Tracko/login"}
                                                 aria-label="Track your progress"
                                                 title="Track your progress"
                                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -221,7 +221,7 @@ export const Nav = (props) => {
 
                                         <li>
                                             <Link
-                                                to={currentUser?"}/Tracko/Visualize":"/Tracko/login"}
+                                                to={currentUser?"/Tracko/Visualize":"/Tracko/login"}
                                                 aria-label="Visualize your progress"
                                                 title="Visualize your progress"
                                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"

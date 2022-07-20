@@ -3,9 +3,9 @@ import {
     AccordionHeader,
     AccordionBody,
 } from "@material-tailwind/react";
-
+import axios from "axios";
 export const AccordionComponent = (props) => {
-    const { index, open, setOpen, workout, setWorkoutsData, workoutsData} = props;
+    const { index, open, setOpen, workout, setWorkoutsData, workoutsData,currentUser} = props;
 
     const handleOpen = (value) => {
         setOpen(open === value ? 0 : value);
@@ -19,6 +19,23 @@ export const AccordionComponent = (props) => {
             day: "numeric",
         };
         date = date.toLocaleDateString("en-US", options);
+    }
+    const deleteWorkout = () => {
+        const test = [...workoutsData];
+        test.splice(index, 1);
+        setWorkoutsData(test);
+        axios
+                .put(
+                    "https://tracko-dev-c8ced-default-rtdb.firebaseio.com/Workout/" +
+                        currentUser.uid + ".json",
+                    test
+                )
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
     }
     return (
         <Accordion
@@ -48,14 +65,7 @@ export const AccordionComponent = (props) => {
                 })}
                 <button
                     className="block bg-lightBlue w-32 h-6 mt-3 rounded-lg"
-                    onClick={() => {
-                        console.log(workoutsData)
-                        const test = [...workoutsData];
-                        console.log(index,test)
-                        test.splice(index, 1);
-                        console.log(test)
-                        setWorkoutsData(test);
-                    }}
+                    onClick={() => deleteWorkout()}
                 >
                     Delete Workout
                 </button>

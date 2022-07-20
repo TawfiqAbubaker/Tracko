@@ -22,7 +22,7 @@ function App() {
                     <Route path="/Tracko/login" element={<Login language={language}/>}/>
                     <Route path="/Tracko/" element={<HomePage language={language}/>} />
                     <Route path="/Tracko/track" element={<Track language={language} workoutsData={workoutsData} setWorkoutsData={setWorkoutsData}/>} />
-                    <Route path="/Tracko/Visualize" element={<Visualize language={language} workoutsData={workoutsData}/>}/>
+                    <Route path="/Tracko/Visualize" element={<Visualize language={language} workoutsData={workoutsData} setWorkoutsData={setWorkoutsData}/>}/>
                     <Route path="/Tracko/Feedback" element={<Feedback language={language}/>}/>
                 </Routes>
             </Router>

@@ -35,27 +35,49 @@ export const options = {
 
 export function LineChart(props) {
   const {workoutsData} = props;
-  const labels = workoutsData.map((workout) => {
-      var options = {
-          weekday: "long",
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-      };
-      return workout[0].Date.toLocaleDateString("en-US", options);
-  });
-  const data = {
+  console.log(workoutsData)
+  let labels  = []
+  let data = {
     labels,
     datasets: [
       {
         label: 'Weight progression',
-        data: workoutsData.map((workout) => {
-          return workout[0].Weight;
-        }),
+        data: [],
         borderColor: 'rgb(255, 99, 132)',
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
       },
     ],
   };
-  return <Line options={options} data={data}/>;
+  try {
+      labels = workoutsData.map((workout) => {
+          var options = {
+              weekday: "long",
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+          };
+          const date = new Date(workout[0].Date);
+          return date.toLocaleDateString("en-US", options);
+      });
+      data = {
+        labels,
+        datasets: [
+          {
+            label: 'Weight progression',
+            data: workoutsData.map((workout) => {
+              return workout[0].Weight;
+            }),
+            borderColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+          },
+        ],
+      };
+  } catch {}
+  return (
+      <div>
+        <p className="text-center text-xl">{labels.length===0 && "No data provided yet. \n Please input some workouts."}
+        </p>
+          <Line options={options} data={data} />
+      </div>
+  );
 }

@@ -24,11 +24,11 @@ export const Track = (props) => {
             .get(
                 "https://tracko-dev-c8ced-default-rtdb.firebaseio.com/Workout/" + currentUser.uid+'.json'
             )
-            .then((response) => setWorkoutsData(Object.values(response.data)[0]))
+            .then((response) => setWorkoutsData(response.data))
             .catch((error) => console.log('error is' ,error));
     },[])
     const addExercise = () => {
-        const temp = [];
+        let temp = [];
         try {
             temp = [...workoutData];
         } catch {}
@@ -53,11 +53,10 @@ export const Track = (props) => {
         if (!verififer()) {
             alert("Please fill all of the form inputs");
         } else {
-            const temp = [];
-        try {
-            temp = [...workoutsData];
-        } catch {
-        }
+            let temp = [];
+            try {
+                temp = [...workoutsData];
+            } catch {}
             temp.push([
                 {
                     Name: workoutName,
@@ -66,12 +65,15 @@ export const Track = (props) => {
                 },
                 ...workoutData,
             ]);
+            console.log('workoutdata',workoutsData);
+            console.log('temp', temp)
             setWorkoutsData(temp);
 
             axios
-                .post(
+                .put(
                     "https://tracko-dev-c8ced-default-rtdb.firebaseio.com/Workout/" +
-                        currentUser.uid + ".json",
+                        currentUser.uid+
+                        ".json",
                     temp
                 )
                 .then(function (response) {
@@ -195,6 +197,7 @@ export const Track = (props) => {
                                 workout={workout}
                                 setWorkoutsData={setWorkoutsData}
                                 workoutsData={workoutsData}
+                                currentUser={currentUser}
                             />
                         ))}
                     </Fragment>
