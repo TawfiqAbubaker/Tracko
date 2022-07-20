@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Tracko/static/css/main.edd07995.css",
-    "main.js": "/Tracko/static/js/main.e7ee72a0.js",
+    "main.css": "/Tracko/static/css/main.27e50be0.css",
+    "main.js": "/Tracko/static/js/main.bb896f43.js",
     "static/media/Calendar.png": "/Tracko/static/media/Calendar.f6bccbec536902eef6c3.png",
     "static/media/Rocket.png": "/Tracko/static/media/Rocket.ac0d3a35cba4163b6e19.png",
     "static/media/Hand.png": "/Tracko/static/media/Hand.965a97a203f5cccac8ba.png",
     "static/media/homePage.svg": "/Tracko/static/media/homePage.e670512a8967a0ee3b350f3c0d5577ca.svg",
     "index.html": "/Tracko/index.html",
-    "main.edd07995.css.map": "/Tracko/static/css/main.edd07995.css.map",
-    "main.e7ee72a0.js.map": "/Tracko/static/js/main.e7ee72a0.js.map"
+    "main.27e50be0.css.map": "/Tracko/static/css/main.27e50be0.css.map",
+    "main.bb896f43.js.map": "/Tracko/static/js/main.bb896f43.js.map"
   },
   "entrypoints": [
-    "static/css/main.edd07995.css",
-    "static/js/main.e7ee72a0.js"
+    "static/css/main.27e50be0.css",
+    "static/js/main.bb896f43.js"
   ]
 }
