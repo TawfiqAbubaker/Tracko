@@ -2,9 +2,24 @@ import { useState } from "react";
 import "../index.css";
 import logo from "../Media/Dumbell.png";
 import { Link } from "react-router-dom";
+import { useAuth} from "../contexts/AuthContext";
+import { useNavigate } from "react-router";
+
+
 export const Nav = (props) => {
     const {language, setLanguage} = props;
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const {signout, currentUser} = useAuth();
+    const navigate = useNavigate();
+    const handleLogout = async () => {
+        try{
+            await signout();
+            navigate('/Tracko/')
+        }
+        catch{
+
+        }
+    }
     return (
         <div className="sticky top-0 z-50 px-10 py-5 mx-auto sm:max-w-xl md:max-w-full  md:px-24 lg:px-8 backdrop-filter backdrop-blur-lg">
             <div className="lg:px-12 relative flex items-center justify-between">
@@ -33,7 +48,7 @@ export const Nav = (props) => {
                         </li>
                         <li>
                             <Link
-                                to="/Tracko/track"
+                                to={currentUser?"}/Tracko/track":"/Tracko/login"}
                                 aria-label="Track your workouts"
                                 title="Track your workouts"
                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -44,7 +59,7 @@ export const Nav = (props) => {
 
                         <li>
                             <Link
-                                to="/Tracko/Visualize"
+                                to={currentUser?"}/Tracko/Visualize":"/Tracko/login"}
                                 aria-label="Visualize your progress"
                                 title="Visualize your progress"
                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -82,32 +97,42 @@ export const Nav = (props) => {
                             />
                         )}
                     </li>
+                    {!currentUser ? <>
                     <li>
                         <Link
-                            to="/Tracko/"
+                            to="/Tracko/login"
                             aria-label="Login"
                             title="Login"
                             className="inline-flex items-center justify-center h-10 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-lightBlue hover:bg-sky-300 focus:shadow-outline focus:outline-none"
-                            onClick={() => {
-                                alert("This feature will be implemented soon.");
-                            }}
                         >
                             Login
                         </Link>
                     </li>
                     <li>
                         <Link
-                            to="/Tracko/"
+                            to="/Tracko/signup"
                             className="inline-flex items-center justify-center h-10 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md  bg-darkBlue-100 hover:bg-darkBlue-200 focus:shadow-outline focus:outline-none"
                             aria-label="Sign up"
                             title="Sign up"
-                            onClick={() => {
-                                alert("This feature will be implemented soon.");
-                            }}
                         >
                             Sign up
                         </Link>
                     </li>
+                    </> :
+                    <>
+                    <li>
+                        <Link
+                            to="/Tracko/"
+                            className="inline-flex items-center justify-center h-10 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md  bg-darkBlue-100 hover:bg-darkBlue-200 focus:shadow-outline focus:outline-none"
+                            aria-label="Sign up"
+                            title="Sign up"
+                            onClick={handleLogout}
+                        >
+                            Log out
+                        </Link>
+                    </li>
+                    </>
+                    }
                 </ul>
                 <div className="lg:hidden">
                     <button
@@ -137,7 +162,7 @@ export const Nav = (props) => {
                                 <div className="flex items-center justify-between mb-4">
                                     <div>
                                         <Link
-                                            to="/"
+                                            to="/Tracko/"
                                             aria-label="goTrack"
                                             title="goTrack"
                                             className="inline-flex items-center"
@@ -175,7 +200,7 @@ export const Nav = (props) => {
                                     <ul className="space-y-4">
                                         <li>
                                             <Link
-                                                to="/"
+                                                to="/Tracko/"
                                                 aria-label="Our service"
                                                 title="Our service"
                                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -185,7 +210,7 @@ export const Nav = (props) => {
                                         </li>
                                         <li>
                                             <Link
-                                                to="/Tracko/track"
+                                                to={currentUser?"}/Tracko/track":"/Tracko/login"}
                                                 aria-label="Track your progress"
                                                 title="Track your progress"
                                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -196,7 +221,7 @@ export const Nav = (props) => {
 
                                         <li>
                                             <Link
-                                                to="/Tracko/Visualize"
+                                                to={currentUser?"}/Tracko/Visualize":"/Tracko/login"}
                                                 aria-label="Visualize your progress"
                                                 title="Visualize your progress"
                                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -214,9 +239,11 @@ export const Nav = (props) => {
                                                 Feedback
                                             </Link>
                                         </li>
+                                        {!currentUser ? 
+                                        <>
                                         <li>
                                             <Link
-                                                to="/Tracko/"
+                                                to="/Tracko/login"
                                                 aria-label="Login"
                                                 title="Sign in"
                                                 className="font-medium tracking-wide text-darkBlue-100 transition-colors duration-200 hover:text--purple-accent-400"
@@ -226,7 +253,7 @@ export const Nav = (props) => {
                                         </li>
                                         <li>
                                             <Link
-                                                to="/Tracko/"
+                                                to="/Tracko/signup"
                                                 className="font-medium tracking-wide text-darkBlue-100 transition-colors duration-200 hover:text--purple-accent-400"
                                                 aria-label="Sign up"
                                                 title="Sign up"
@@ -234,6 +261,20 @@ export const Nav = (props) => {
                                                 Sign up
                                             </Link>
                                         </li>
+                                        </>
+                                        :
+                                        <li>
+                                        <Link
+                                            to="/Tracko/"
+                                            className="font-medium tracking-wide text-darkBlue-100 transition-colors duration-200 hover:text--purple-accent-400"
+                                            aria-label="Sign out"
+                                            title="Sign out"
+                                            onClick={handleLogout}
+                                        >
+                                            Sign out
+                                        </Link>
+                                    </li>
+                                        }
                                         <li>
                                             {language == "En" ? (
                                                 <img

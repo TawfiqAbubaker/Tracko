@@ -10,7 +10,7 @@ export const AccordionComponent = (props) => {
     const handleOpen = (value) => {
         setOpen(open === value ? 0 : value);
     };
-    let date = workout[0].Date;
+    let date = new Date(workout[0].Date);
     if(date instanceof Date){
         var options = {
             weekday: "long",
@@ -18,7 +18,7 @@ export const AccordionComponent = (props) => {
             month: "long",
             day: "numeric",
         };
-        date = workout[0].Date.toLocaleDateString("en-US", options);
+        date = date.toLocaleDateString("en-US", options);
     }
     return (
         <Accordion

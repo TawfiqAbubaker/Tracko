@@ -56,13 +56,13 @@ export const Feature = (props) => {
                             />
                         </div>
                         <h6 className="mb-2 font-semibold leading-5">
-                            {language == "En"
+                            {language === "En"
                                 ? "Cleaner Modern Design"
                                 : "Design Moderne Propre"}
                         </h6>
                         <p className="mb-3 text-sm text-gray-900">
-                            {language == "En"
-                                ? "This website was carefully designed to be very user-friendly."
+                            {language === "En"
+                                ? "Anyone can track their fitness with Tracko."
                                 : "Ce site a été soigneusement conçu pour être très convivial."}
                         </p>
                     </div>
