@@ -54,6 +54,9 @@ export const Singup = (props) => {
                                 <>
                                 <form onSubmit={verifier}>
                                     <div className="mb-6">
+                                        <p>
+                                            {language==="En" ? "Enter your Name and Age then press Next." : "Entrez votre nom et votre âge, puis appuyez sur Suivant."}
+                                        </p>
                                         <p className="mb-2 text-red-600">
                                             {error}
                                         </p>
