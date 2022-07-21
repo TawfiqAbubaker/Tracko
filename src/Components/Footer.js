@@ -110,7 +110,7 @@ export const Footer = (props) => {
                         </a>
                     </div>
                     <p className="mt-4 text-sm text-gray-500">
-                        If you have any questions don't hesitate to contact us!
+                        {language==="En" ? "If you have any questions don't hesitate to contact us!" : "Si vous avez des questions, n'hésitez pas à nous contacter !"}
                     </p>
                 </div>
             </div>
