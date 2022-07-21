@@ -41,8 +41,8 @@ export const Feature = (props) => {
                         </h6>
                         <p className="mb-3 text-sm text-gray-900">
                             {language == "En"
-                                ? "This website adapts the notion of progressive overload."
-                                : "Ce site adapte la notion de surcharge progressive surcharge progressive."}
+                                ? "Tracko adapts the notion of progressive overload."
+                                : "Tracko adapte la notion de surcharge progressive surcharge progressive."}
                         </p>
                     </div>
                 </div>
@@ -63,7 +63,7 @@ export const Feature = (props) => {
                         <p className="mb-3 text-sm text-gray-900">
                             {language === "En"
                                 ? "Anyone can track their fitness with Tracko."
-                                : "Ce site a été soigneusement conçu pour être très convivial."}
+                                : "Tracko a été soigneusement conçu pour être très convivial."}
                         </p>
                     </div>
                 </div>

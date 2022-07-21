@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 import workingOut from "../Media/homePage.svg";
-
 export const About = (props) => {
+    const {currentUser} = useAuth();
+
     const {language} = props;
     return (
         <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -37,13 +39,13 @@ export const About = (props) => {
                     </div>
                     <div className="flex flex-col items-center md:flex-row">
                         <Link
-                            to="/Tracko/track"
+                            to={currentUser  && !currentUser.email !== null ? "/Tracko/track" : "/Tracko/login"}
                             className="inline-flex items-center justify-center w-full h-12 px-6 mb-3 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto md:mr-4 md:mb-0 bg-salmonOrange hover:bg-lightBlue focus:shadow-outline focus:outline-none"
                         >
                             <span className="mr-3">{language=="En" ? "Get Started" : "Rejoindre"}</span>
                         </Link>
                         <Link
-                            to="/Tracko/track"
+                            to={currentUser  && !currentUser.email !== null ? "/Tracko/track" : "/Tracko/login"}
                             aria-label=""
                             className="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700"
                         >

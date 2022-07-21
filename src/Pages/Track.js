@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { Exercise } from "../Components/Exercise";
 import { Footer } from "../Components/Footer";
 import { Dum} from "../tempData/DumData";
-
+import { useNavigate } from "react-router";
 import { AccordionComponent } from "../Components/Accordion";
 import axios from "axios";
 import { useAuth } from "../contexts/AuthContext";
@@ -14,12 +14,17 @@ export const Track = (props) => {
     const {language, workoutsData, setWorkoutsData} = props;
     const [currentWeight, setCurrentWeight] = useState();
     const [workoutName, setWorkoutName] = useState();
+    const navigate = useNavigate();
     const [startDate, setStartDate] = useState(new Date());
     const {currentUser} = useAuth();
     const [workoutData, setWorkoutData] = useState(Dum);
     const [open, setOpen] = useState(0);
-
+   
     useEffect(()=> {
+        // if(currentUser === null){
+        //     console.log('we here')
+        //     navigate('/Tracko/login')
+        // }
         axios
             .get(
                 "https://tracko-dev-c8ced-default-rtdb.firebaseio.com/Workout/" + currentUser.uid+'.json'
@@ -187,6 +192,7 @@ export const Track = (props) => {
                         ? "View your past workouts."
                         : "Visualisez vos entraînements"}
                 </h2>
+                {console.log(workoutsData)}
                 {workoutsData ? (
                     <Fragment>
                         {workoutsData.map((workout, index) => (

@@ -34,7 +34,6 @@ export const Login = (props) => {
                     ? "Log in to Tracko"
                     : "Connectez vous à Tracko"}
             </h2>
-            {currentUser && currentUser.email}
             <div className="container px-6 py-12 mx-auto">
                 <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
                     <div className="md:w-8/12 lg:w-5/12 ">

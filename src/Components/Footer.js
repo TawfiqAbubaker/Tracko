@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../Media/Dumbell.png";
 
 export const Footer = (props) => {
@@ -6,8 +7,8 @@ export const Footer = (props) => {
         <div className="px-4 pt-10 pb-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
             <div className="grid gap-10 row-gap-6 pb-6 sm:grid-cols-2 lg:grid-cols-4">
                 <div className="sm:col-span-2">
-                    <a
-                        href="/"
+                    <Link
+                        to="/Tracko/"
                         aria-label="Go home"
                         title="Company"
                         className="inline-flex items-center"
@@ -16,7 +17,7 @@ export const Footer = (props) => {
                         <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                             tracko
                         </span>
-                    </a>
+                    </Link>
                     <div className="mt-4 lg:max-w-sm">
                         <p className="text-sm text-gray-800">
                             {language == "En"
@@ -71,7 +72,7 @@ export const Footer = (props) => {
                     </span>
                     <div className="flex items-center mt-1 space-x-3">
                         <a
-                            href="/"
+                            href="https://twitter.com/picktimeIn"
                             className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400"
                         >
                             <svg
@@ -83,7 +84,7 @@ export const Footer = (props) => {
                             </svg>
                         </a>
                         <a
-                            href="/"
+                            href="https://www.instagram.com/picktimein/"
                             className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400"
                         >
                             <svg
@@ -96,7 +97,7 @@ export const Footer = (props) => {
                             </svg>
                         </a>
                         <a
-                            href="/"
+                            href="https://www.facebook.com/picktimeIn"
                             className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400"
                         >
                             <svg

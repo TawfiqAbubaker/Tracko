@@ -43,7 +43,7 @@ export const Nav = (props) => {
                                 title="Our service"
                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                             >
-                                About
+                                {language==="En" ? "About" : "À Propos"}
                             </Link>
                         </li>
                         <li>
@@ -53,7 +53,7 @@ export const Nav = (props) => {
                                 title="Track your workouts"
                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                             >
-                                Track
+                                {language=="En"? "Track" : "Documenter"}
                             </Link>
                         </li>
 
@@ -64,7 +64,7 @@ export const Nav = (props) => {
                                 title="Visualize your progress"
                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                             >
-                                Visualize
+                                {language=="En"? "Visualize":"Visualizer"}
                             </Link>
                         </li>
                         <li>
@@ -81,21 +81,11 @@ export const Nav = (props) => {
                 </div>
                 <ul className="flex items-center hidden space-x-8 lg:flex">
                     <li>
-                        {language == "En" ? (
-                            <img
-                                src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_the_United_Kingdom.svg"
-                                alt=""
-                                className="w-8"
-                                onClick={() => setLanguage("Fr")}
-                            />
-                        ) : (
-                            <img
-                                src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg"
-                                alt=""
-                                className="w-8 h-4"
-                                onClick={() => setLanguage("En")}
-                            />
-                        )}
+                        {language == "En" ? 
+                            <div className="font-extrabold cursor-pointer" onClick={() => setLanguage("Fr")}>En</div>
+                         : 
+                            <div className="font-extrabold cursor-pointer"  onClick={() => setLanguage("En")}>Fr</div>
+                        }
                     </li>
                     {!currentUser ? <>
                     <li>
@@ -205,7 +195,7 @@ export const Nav = (props) => {
                                                 title="Our service"
                                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                             >
-                                                About
+                                                {language==="En" ? "About" : "À Propos"}
                                             </Link>
                                         </li>
                                         <li>
@@ -215,7 +205,7 @@ export const Nav = (props) => {
                                                 title="Track your progress"
                                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                             >
-                                                Track
+                                                {language=="En"? "Track" : "Documenter"}
                                             </Link>
                                         </li>
 
@@ -226,7 +216,7 @@ export const Nav = (props) => {
                                                 title="Visualize your progress"
                                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                             >
-                                                Visualize
+                                                {language=="En"? "Visualize":"Visualizer"}
                                             </Link>
                                         </li>
                                         <li>
@@ -276,25 +266,11 @@ export const Nav = (props) => {
                                     </li>
                                         }
                                         <li>
-                                            {language == "En" ? (
-                                                <img
-                                                    src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_the_United_Kingdom.svg"
-                                                    alt=""
-                                                    className="w-8"
-                                                    onClick={() =>
-                                                        setLanguage("Fr")
-                                                    }
-                                                />
-                                            ) : (
-                                                <img
-                                                    src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg"
-                                                    alt=""
-                                                    className="w-8 h-4"
-                                                    onClick={() =>
-                                                        setLanguage("En")
-                                                    }
-                                                />
-                                            )}
+                                        {language == "En" ? 
+                                            <div className="font-extrabold cursor-pointer" onClick={() => setLanguage("Fr")}>En</div>
+                                        : 
+                                            <div className="font-extrabold cursor-pointer"  onClick={() => setLanguage("En")}>Fr</div>
+                                        }
                                         </li>
                                     </ul>
                                 </nav>
